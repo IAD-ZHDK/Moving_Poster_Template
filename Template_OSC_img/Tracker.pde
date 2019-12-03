@@ -33,10 +33,10 @@ class Tracker {
     if (updateFlag <=30) {
       temp = target.copy();
     } else {
-      // use the mouse if there is no communication  
-      //temp = new PVector(float(mouseX)/width, float(mouseY)/height, .1);
-      angle += 0.005;
-      temp = new PVector((sin(angle)+1)*.5, (cos(angle)+1)*.1+.5);
+      /// use the mouse if there is no communication  
+      temp = new PVector(float(mouseX)/width, float(mouseY)/height, .1);
+     // angle += 0.005;
+      //temp = new PVector((sin(angle)+1)*.5, (cos(angle)+1)*.1+.5);
     }
     temp.mult(1-averageWeight); 
     average.mult(averageWeight); 
