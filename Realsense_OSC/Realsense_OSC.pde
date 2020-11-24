@@ -15,8 +15,8 @@ OpenCV opencv;
 OscP5 oscP5;
 NetAddress remote;
 
-int trackingLow = 2500;
-int trackingHigh = 3500;
+int trackingLow = 1;
+int trackingHigh = 2050;
 boolean videoOutput = false;
 ArrayList<Contour> contours = new ArrayList<Contour>();
 byte[] depthRaw = new byte[640*480];
@@ -29,7 +29,7 @@ void setup()
 {
   size(640, 580, FX2D);
   camera.enableDepthStream(640, 480);
-  camera.enableColorizer(ColorScheme.Cold);
+  // camera.enableColorizer(ColorScheme.Cold);
   camera.start();
   opencv = new OpenCV(this, width, height);
   noFill();
