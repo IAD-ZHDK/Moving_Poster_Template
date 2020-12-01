@@ -24,7 +24,7 @@ void draw() {
   for (float x = 0; x<=width+spacingX; x+=spacingX) {
     for (float y = 0; y<=height+spacingY; y+=spacingY) {
       float reactor = dist(x,y,Pos.x*width,Pos.y*height);
-      float scaler = 0.005;
+      float scaler = (Pos.z*0.01)+0.001;
       reactor = reactor*scaler;
       float diameter = ( spacingX / 5 )*reactor;
       push();

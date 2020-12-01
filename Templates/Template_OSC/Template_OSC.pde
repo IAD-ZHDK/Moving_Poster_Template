@@ -2,7 +2,7 @@ Tracker myTracker;
 
 void setup() {
   fullScreen(FX2D);  // actual screen size 1080*1920*2;
-  // fullScreen(FX2D, SPAN); use this for displaying on multiple screens
+  // fullScreen(FX2D, SPAN); //use this for displaying on multiple screens
   ScreenSetup screen = new ScreenSetup(); // important for scaling the screen for the correct aspect ratio
   myTracker = new Tracker();// important for getting the tracking information from an external application
   rectMode(CENTER);
@@ -20,7 +20,7 @@ void draw() {
   strokeWeight(2);
   stroke(255, 0, 0, 70);
   line(width/2, 0, width/2, height);
-  //if (frameCount % 120 == 1  ) println("FPS"+frameRate); // for checking the performance of your code
+  if (frameCount % 120 == 1  ) println("FPS"+frameRate); // for checking the performance of your code
 };
 
 
@@ -39,7 +39,7 @@ void shape1(PVector Pos) {
     float scale = (width/2)*.65-(i*15);
     float myX = myPos.x+(TargetPos.x*i*0.03);
     float myY = myPos.y+(TargetPos.y*i*0.03);
-    float myZ = myPos.z+(TargetPos.z*i*0.03);
+    float myZ = myPos.z+(TargetPos.z*i);
     translate(myX, myY);
     rotate(PI/4);
     rotate(radians(myZ*i));

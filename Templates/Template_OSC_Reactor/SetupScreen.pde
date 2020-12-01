@@ -26,6 +26,6 @@ class ScreenSetup {
     //reposition output in center of display
     int startPointX = (displayWidth/2) - (width/2);
     int startPointY = (displayHeight/2) - (height/2);
-    surface.setLocation(startPointX, startPointY);
+    //surface.setLocation(startPointX, startPointY);
   }
 }

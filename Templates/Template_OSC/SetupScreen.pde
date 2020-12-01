@@ -1,5 +1,6 @@
 //code for setting up correct aspect ratio
 // do not change!
+PApplet parent = this;
 class ScreenSetup {
   private int posterWidth;
   private int posterHeight;
@@ -26,6 +27,6 @@ class ScreenSetup {
     //reposition output in center of display
     int startPointX = (displayWidth/2) - (width/2);
     int startPointY = (displayHeight/2) - (height/2);
-    surface.setLocation(startPointX, startPointY);
+    // surface.setLocation(startPointX, startPointY);
   }
 }

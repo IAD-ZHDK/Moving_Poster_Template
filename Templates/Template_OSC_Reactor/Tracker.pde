@@ -3,6 +3,13 @@ import netP5.*;
 OscP5 oscP5;
 NetAddress myRemoteLocation;
 //
+float zwheel = 0;
+void mouseWheel(MouseEvent event) {
+  float e = event.getCount();
+  zwheel+= e*0.1;
+  zwheel = constrain(zwheel, 0.0, 0.999);
+}
+
 class Tracker {
   private PVector average  = new PVector();
   private PVector target = new PVector();
@@ -34,10 +41,8 @@ class Tracker {
       temp = target.copy();
     } else {
       // use the mouse if there is no communication  
-      temp = new PVector(float(width-mouseX)/width, float(mouseY)/height, .1);
-      //angle += 0.005;
-      //temp = new PVector((sin(angle)+1)*.5, (cos(angle)+1)*.1+.5);
-    }
+      temp = new PVector(float(width-mouseX)/width, float(mouseY)/height, zwheel);
+  }
     temp.mult(1-averageWeight); 
     average.mult(averageWeight); 
     average.add(temp);
