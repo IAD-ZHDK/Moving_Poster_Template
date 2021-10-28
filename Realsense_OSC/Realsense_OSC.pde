@@ -1,3 +1,7 @@
+// install bildspur realsense library 2.3.0
+// install oscp5 libraray 0.9.9
+// install controlp5 libirary 2.2.6
+
 import ch.bildspur.realsense.*;
 import ch.bildspur.realsense.type.*;
 
@@ -62,7 +66,8 @@ void draw()
   background(0);
   //if (camera.isCameraAvailable()) {
   blobTracking();
-  image(trackImage, 0, 0);
+  //image(trackImage, 0, 0);
+   image(opencv.getOutput(),0, 0, width, height);
   if (contours.size() > 0) {
     Contour biggestContour = contours.get(0);
     Rectangle r = biggestContour.getBoundingBox();
